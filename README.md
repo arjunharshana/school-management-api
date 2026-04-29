@@ -8,6 +8,7 @@ A robust Node.js and Express RESTful API for managing school data. It allows use
 - **List Schools**: Retrieve all schools sorted by their distance from a specified geographic coordinate (latitude and longitude).
 - **Data Validation**: Comprehensive input validation using [Zod](https://zod.dev/).
 - **Distance Calculation**: Accurate geographical distance calculation using the Haversine formula.
+- **Security**: Enhanced API security with rate limiting to prevent abuse and HTTP security headers via Helmet.
 - **Standardized Responses**: Consistent JSON response structures for both success and error cases.
 
 ## Tech Stack
@@ -16,6 +17,8 @@ A robust Node.js and Express RESTful API for managing school data. It allows use
 - **Express.js**: Web framework for Node.js
 - **MySQL2**: MySQL client for Node.js
 - **Zod**: TypeScript-first schema declaration and validation library
+- **Helmet**: Middleware to secure apps by setting HTTP headers
+- **Express Rate Limit**: Middleware for basic rate-limiting
 - **Cors**: Cross-Origin Resource Sharing middleware
 - **Dotenv**: Environment variable management
 
