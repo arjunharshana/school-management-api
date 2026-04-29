@@ -1,0 +1,67 @@
+{
+  "info": {
+    "_postman_id": "ab123456-cd78-90ef-gh12-34567890ijkl",
+    "name": "School Management API",
+    "description": "APIs to add schools and list schools sorted by proximity.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Greenwood High School\",\n  \"address\": \"123 Oak Street, Springfield\",\n  \"latitude\": 40.7128,\n  \"longitude\": -74.0060\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/addSchool",
+          "protocol": "http",
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "description": "Adds a new school to the database. Validates the payload to ensure proper data types and non-empty values."
+      },
+      "response": []
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/listSchools?latitude=40.730610&longitude=-73.935242",
+          "protocol": "http",
+          "port": "3000",
+          "path": ["api", "listSchools"],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "40.730610",
+              "description": "User's current latitude"
+            },
+            {
+              "key": "longitude",
+              "value": "-73.935242",
+              "description": "User's current longitude"
+            }
+          ]
+        },
+        "description": "Fetches all schools and sorts them by geographical distance from the user's provided coordinates."
+      },
+      "response": []
+    }
+  ]
+}
